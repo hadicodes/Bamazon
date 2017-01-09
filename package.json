@@ -1,0 +1,26 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "An Amazon-like backend app that will take in orders from customers and deplete stock from the store's inventory.",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadicodes/Bamazon.git"
+  },
+  "keywords": [
+    "bamazon"
+  ],
+  "author": "Hadi Yousufi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadicodes/Bamazon/issues"
+  },
+  "homepage": "https://github.com/hadicodes/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^2.0.0",
+    "mysql": "^2.12.0"
+  }
+}
