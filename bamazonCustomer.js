@@ -1,7 +1,10 @@
 //Load dependecies
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var table = require("console.table");
+
+
+
+
 
 //Sync with MySQL db
 var connection = mysql.createConnection({
@@ -19,13 +22,14 @@ var connection = mysql.createConnection({
 //Connect to database
 connection.connect(function(err) {
     if (err) throw err;
+    displayAllProducts();
 });
 
 //ClI Questions for user
 var questions = inquirer.prompt([{
     name: "productId",
     type: "input",
-    message: "What is the ID of the product you would like to buy?",
+    message: "What is the ID of the product you would like to buy?\n",
     validate: function(value) {
         if (isNaN(value) === false) {
             return true;
@@ -62,3 +66,17 @@ var questions = inquirer.prompt([{
         }
     });
 });
+
+function displayAllProducts() {
+    connection.query("SELECT * from products", (err, allProducts) => {
+        if (err) throw err;
+        // console.log(allProducts);
+        // console.log(`item_id  |  product_name  |  department_name  | price  | stock_quantity`);
+             allProducts.forEach(product => {
+                 console.log(
+                     `Item_id: ${product.item_id}  Product Name: ${product.product_name}            Department: ${product.department_name}      Price:${product.price}        Stock Quantity: ${product.stock_quantity}`.replace(/[\n\r]+/g, '')
+                     ); 
+        })
+        // console.log(productsTable);
+    })
+}

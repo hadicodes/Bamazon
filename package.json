@@ -1,7 +1,7 @@
 {
   "name": "bamazon",
   "version": "1.0.0",
-  "description": "An Amazon-like backend app that will take in orders from customers and deplete stock from the store's inventory.",
+  "description": "An Amazon-like backend app that will take in orders from customers and delete stock from the store's inventory.",
   "main": "bamazonCustomer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
